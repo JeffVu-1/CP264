@@ -1,0 +1,96 @@
+/**
+ * -------------------------------------
+ * @file  sample_tests.txt
+ * Assignment 2 sample testing
+ * -------------------------------------
+ * @author David Brown, 123456789, dbrown@wlu.ca
+ *
+ * @version 2024-09-13
+ *
+ * -------------------------------------
+ */
+Test: genres_menu()
+
+Genres
+ 0: science fiction
+ 1: fantasy
+ 2: drama
+ 3: romance
+ 4: comedy
+ 5: zombie
+ 6: action
+ 7: historical
+ 8: horror
+ 9: war
+10: mystery
+-------------------------------------------
+Test: movie_init(&source, "Dark City", 1998, "Alex Proyas", 0, 7.8)
+
+Test: movie_print(source):
+
+Title:    Dark City
+Year:     1998
+Director: Alex Proyas
+Genre:    science fiction
+Rating:   7.8
+-------------------------------------------
+Test: movie_copy(&source, &target):
+
+-------------------------------------------
+Test: movie_print(&target):
+
+Title:    Dark City
+Year:     1998
+Director: Alex Proyas
+Genre:    science fiction
+Rating:   7.8
+-------------------------------------------
+Test: read_movie(&source, "Zulu|1964|Cy Endfield|7.8|9"):
+
+Test: movie_print(&source):
+
+Title:    Zulu
+Year:     1964
+Director: Cy Endfield
+Genre:    war
+Rating:   7.8
+-------------------------------------------
+Test: result = movie_compare(&source, &source):
+result: 0
+Test: result = movie_compare(&source, &target):
+result: 22
+Test: result = movie_compare(&target, &source):
+result: -22
+-------------------------------------------
+Test: movie_key(&source):
+
+Zulu: 1964
+-------------------------------------------
+Test: get_movie(&source):
+
+Title: Dark City
+Year: 1950
+Director: William Dieterle
+Genres
+ 0: science fiction
+ 1: fantasy
+ 2: drama
+ 3: romance
+ 4: comedy
+ 5: zombie
+ 6: action
+ 7: historical
+ 8: horror
+ 9: war
+10: mystery
+Genre: 2
+Rating: 6.7
+
+Title:    Dark City
+Year:     1950
+Director: William Dieterle
+Genre:    drama
+Rating:   6.7
+-------------------------------------------
+Test: result = movie_compare(&source, &target):
+result: -1
